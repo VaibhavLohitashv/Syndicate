@@ -1,7 +1,8 @@
 exports.handler = async (event) => {
-    console.log("SNS Event:", JSON.stringify(event, null, 2));
-    return {
+    // TODO implement
+    const response = {
         statusCode: 200,
-        body: JSON.stringify('Message processed successfully!'),
+        body: JSON.stringify('Hello from Lambda!'),
     };
+    return response;
 };
