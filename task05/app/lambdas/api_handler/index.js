@@ -38,7 +38,8 @@ exports.handler = async (event) => {
                 event: newEvent  // Only event in the body
             })
         };
-    } catch (error) {
+    } 
+    catch (error) {
         console.error('Error:', error);
         return {
             statusCode: 500,
