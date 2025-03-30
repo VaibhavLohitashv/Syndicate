@@ -31,12 +31,11 @@ exports.handler = async (event) => {
             Item: newEvent
         }).promise();
 
-        // Return response
+        // Return response with correct structure
         return {
-            statusCode: 201,
+            statusCode: 201,  // Status code in the main response
             body: JSON.stringify({
-                statusCode: 201,
-                event: newEvent
+                event: newEvent  // Only event in the body
             })
         };
     } catch (error) {
