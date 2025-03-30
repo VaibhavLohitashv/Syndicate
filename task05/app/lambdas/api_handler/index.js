@@ -2,13 +2,13 @@ const AWS = require('aws-sdk');
 const { v4: uuidv4 } = require('uuid');
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
-const TABLE_NAME = process.env.TABLE_NAME;
+const TABLE_NAME = "Events";
 
 exports.handler = async (event) => {
     try {
         // Parse the request body
         const requestBody = JSON.parse(event.body);
-        
+
         // Validate input
         if (!requestBody.principalId || !requestBody.content) {
             return {
@@ -38,7 +38,7 @@ exports.handler = async (event) => {
                 event: newEvent  // Only event in the body
             })
         };
-    } 
+    }
     catch (error) {
         console.error('Error:', error);
         return {
